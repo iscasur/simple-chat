@@ -8,4 +8,11 @@ const PORT = process.env.PORT || 5000
 const socket = require('socket.io');
 const io = socket(server);
 
+io.on('connection', (socket) => {
+
+  socket.on('connected', () => {
+    console.log('User connected')
+  })
+})
+
 server.listen(PORT, () => console.log('Server started'));
