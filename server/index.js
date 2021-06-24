@@ -9,8 +9,14 @@ const socket = require('socket.io');
 const io = socket(server);
 
 io.on('connection', (socket) => {
-  socket.on('connected', () => {
-    console.log('User connected');
+  let user;
+
+  socket.on('connected', (name) => {
+    user = name;
+    socket.broadcast.emit('messages', {
+      name: user,
+      message: `${user} has joined the room`,
+    });
   });
 
   socket.on('message', (name, message) => {
@@ -18,7 +24,10 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    io.emit('messages', { server: 'Server', message: 'Has left the room' });
+    io.emit('messages', {
+      name: '',
+      message: `${user} has left the room`,
+    });
   });
 });
 
