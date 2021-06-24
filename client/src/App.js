@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import Chat from './Components/Chat';
+
 import './App.css';
-import socket from './Components/Socket';
 
 function App() {
   const [name, setName] = useState('');
   const [user, setUser] = useState(false);
 
   const register = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
     if (name !== '') {
       setUser(true);
     }
@@ -15,15 +16,14 @@ function App() {
 
   return (
     <div className='App'>
-      <form onSubmit={register}>
-        <label htmlFor=''>Name:</label>
-        <input
-          type='text'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <button>Enter</button>
-      </form>
+      {!user && (
+        <form onSubmit={register}>
+          <label htmlFor=''>Name:</label>
+          <input value={name} onChange={(e) => setName(e.target.value)} />
+          <button>Enter</button>
+        </form>
+      )}
+      {user && <Chat name={name} />}
     </div>
   );
 }
