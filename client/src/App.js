@@ -16,12 +16,26 @@ function App() {
 
   return (
     <div className='App'>
+      <h2 className='title'>Simple Chat</h2>
       {!user && (
-        <form onSubmit={register}>
-          <label htmlFor=''>Name:</label>
-          <input value={name} onChange={(e) => setName(e.target.value)} />
-          <button>Enter</button>
-        </form>
+        <>
+          <form onSubmit={register} className='register'>
+            <label
+              htmlFor=''
+              className='screen-reader-only'
+              aria-label='Write your name'
+            >
+              Name:
+            </label>
+            <input
+              placeholder='Enter your name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <br />
+            <button className='btn btn-login'>Enter</button>
+          </form>
+        </>
       )}
       {user && <Chat name={name} />}
     </div>

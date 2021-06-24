@@ -37,14 +37,20 @@ const Chat = ({ name }) => {
       <div className='chat'>
         {messages.map((e, i) => (
           <div key={i}>
-            <div>{e.name}</div>
-            <div>{e.message}</div>
+            <div className='username'>{e.name}</div>
+            <div className='message'>{e.message}</div>
           </div>
         ))}
         <div ref={divRef}></div>
       </div>
       <form onSubmit={submit}>
-        <label htmlFor=''>Message</label>
+        <label
+          htmlFor=''
+          className='screen-reader-only'
+          aria-label='Write your message'
+        >
+          Message
+        </label>
         <input
           type='text'
           value={message}

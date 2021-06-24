@@ -14,7 +14,7 @@ io.on('connection', (socket) => {
   socket.on('connected', (name) => {
     user = name;
     socket.broadcast.emit('messages', {
-      name: user,
+      name: '',
       message: `${user} has joined the room`,
     });
   });

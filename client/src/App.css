@@ -1,0 +1,53 @@
+.App {
+  height: 100vh;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+}
+
+.App h2 {
+  margin-bottom: 4rem;
+  color: #9f9aae;
+}
+
+.register input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #9f9aae;
+  padding: 1rem 2rem;
+  outline: none;
+  text-align: center;
+}
+
+.btn {
+  background-color: #7e7696;
+  border: 0;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-login {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.screen-reader-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  overflow: hidden !important;
+}
+
+@media screen and (min-width: 480px) {
+  .App {
+    justify-content: center;
+  }
+}
