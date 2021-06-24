@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import socket from './Socket';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 import './Chat.css';
 
@@ -36,14 +37,14 @@ const Chat = ({ name }) => {
     <div>
       <div className='chat'>
         {messages.map((e, i) => (
-          <div key={i}>
+          <div className='chat__item' key={i}>
             <div className='username'>{e.name}</div>
             <div className='message'>{e.message}</div>
           </div>
         ))}
         <div ref={divRef}></div>
       </div>
-      <form onSubmit={submit}>
+      <form onSubmit={submit} className='chatbox'>
         <label
           htmlFor=''
           className='screen-reader-only'
@@ -56,7 +57,9 @@ const Chat = ({ name }) => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button>Send</button>
+        <button className='btn btn-chat'>
+          <FaTelegramPlane />
+        </button>
       </form>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Chat from './Components/Chat';
+import { BsChatDotsFill } from 'react-icons/bs';
 
 import './App.css';
 
@@ -16,26 +17,25 @@ function App() {
 
   return (
     <div className='App'>
-      <h2 className='title'>Simple Chat</h2>
+      <header className='title'>
+        <BsChatDotsFill /> Simple Chat
+      </header>
       {!user && (
-        <>
-          <form onSubmit={register} className='register'>
-            <label
-              htmlFor=''
-              className='screen-reader-only'
-              aria-label='Write your name'
-            >
-              Name:
-            </label>
-            <input
-              placeholder='Enter your name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <br />
-            <button className='btn btn-login'>Enter</button>
-          </form>
-        </>
+        <form onSubmit={register} className='register'>
+          <label
+            htmlFor=''
+            className='screen-reader-only'
+            aria-label='Write your name'
+          >
+            Name:
+          </label>
+          <input
+            placeholder='Your name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <button className='btn btn-login'>Enter</button>
+        </form>
       )}
       {user && <Chat name={name} />}
     </div>

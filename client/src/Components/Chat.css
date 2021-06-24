@@ -1,10 +1,26 @@
 .chat {
-  width: 100vw;
+  width: 90vw;
   min-height: 80vh;
   max-height: 80vh;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 1rem;
   overflow-y: scroll;
+}
+
+.chat__item {
+  margin-bottom: 1rem;
+}
+
+.chatbox input {
+  border: 0;
+  padding: 1rem 2rem;
+  outline: none;
+  font-size: 1.6rem;
+  width: 80%;
+}
+
+.chatbox .btn-chat {
+  width: 20%;
 }
 
 .username {
@@ -14,7 +30,7 @@
 
 @media screen and (min-width: 768px) {
   .chat {
-    width: 100%;
+    max-width: 500px;
     min-height: 50vh;
     max-height: 50vh;
   }

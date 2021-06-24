@@ -5,12 +5,21 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem;
 }
 
-.App h2 {
-  margin-bottom: 4rem;
+header {
   color: #9f9aae;
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.register {
+  width: 100%;
+  margin-top: 4vh;
+  padding: 2rem;
 }
 
 .register input {
@@ -20,6 +29,8 @@
   padding: 1rem 2rem;
   outline: none;
   text-align: center;
+  width: 100%;
+  font-size: 1.6rem;
 }
 
 .btn {
@@ -33,6 +44,10 @@
 .btn-login {
   width: 100%;
   margin-top: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 .screen-reader-only {
@@ -49,5 +64,9 @@
 @media screen and (min-width: 480px) {
   .App {
     justify-content: center;
+  }
+
+  .register {
+    width: 500px;
   }
 }
