@@ -29,6 +29,7 @@ const Chat = ({ name }) => {
   const submit = (e) => {
     e.preventDefault();
     socket.emit('message', name, message);
+    setMessage('');
   };
 
   return (
